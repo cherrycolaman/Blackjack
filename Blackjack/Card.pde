@@ -29,7 +29,7 @@ class Card{
     } else if (rank == 13){
       text("K", 170, 175);
     } else {
-      text("10", 170, 175);
+      text(rank, 170, 175);
     }
     // Suit 1 is diamond, suit 2 is circle, suit 3 is triangle, suit 4 is plus symbol
     if (suit == 1){
