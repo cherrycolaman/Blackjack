@@ -1,15 +1,16 @@
-Card card;
+// I think I have set up the array properly now.
+Deck cards;
 void setup(){
   background(0, 180, 0);
   size(400, 400);
   rectMode(CORNERS);
-  // First card variable is suit (1 to 4)
-  // Second variable is rank (1 to 12, A=1, J=11, Q=12, K=13)
-  // Enter any valid number for the suit and rank to see the card
-  card = new Card(3, 10);
   textSize(30);
+  // Deck is created and shuffled
+  cards = new Deck();
+  cards.shuffle();
 }
+// The card in position 1 is displayed for now
 void draw(){
-  card.display();
+  cards.deck[1].display();
 }
   
