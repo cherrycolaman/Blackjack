@@ -11,6 +11,9 @@ void setup(){
 }
 // The card in position 1 is displayed for now
 void draw(){
-  cards.deck[1].display();
+  cards.deck[1].display(90, 300);
+  cards.deck[2].display(160, 300);
+  fill(255);
+  text(cards.deck[1].value + cards.deck[2].value, 10, 260);
 }
   
