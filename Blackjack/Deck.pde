@@ -1,8 +1,6 @@
 class Deck{
   // This will be the array of cards
   Card[] deck;
-  // Position will be important for the order of cards
-  int position;
 
   Deck(){
   // A new array of Card objects is created, ignoring spot 0
@@ -17,7 +15,6 @@ class Deck{
       // last 13 cards are "+" symbol
       deck[rank + 39] = new Card(4, rank);
     }
-    position = 1;
   }
   // Below is the command to shuffle the deck
   void shuffle(){
