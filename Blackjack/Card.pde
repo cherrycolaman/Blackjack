@@ -7,6 +7,7 @@ class Card{
   Card(int s, int r){
     suit = s;
     rank = r;
+    // Card's value is 10 if it is Jack or higher
     if (rank > 9){
       value = 10;
     } else {
@@ -15,7 +16,7 @@ class Card{
   }
   void display(int x, int y){
     // If the suit is a diamond or a circle, the color is black
-    // If triangle or plus symbol, the color is red
+    // If triangle or plus symbol, the color is black
     if (suit < 3){
       c = color(255, 0, 0);
     } else {
