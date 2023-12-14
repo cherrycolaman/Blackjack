@@ -51,12 +51,27 @@ void draw(){
     // This prevents the dealer from drawing copies of the player's cards
     if (dealerHits == 0){
       dealer = cards.deck[1].value + cards.deck[2].value;
+      if (dealer<12){
+        if (cards.deck[1].value==1||cards.deck[2].value==1){
+          dealer = dealer + 10;
+        }
+      }
     } else if (dealerHits > 0){
       cards.deck[hits+5].display(230, 120);
       dealer = cards.deck[1].value + cards.deck[2].value + cards.deck[hits+5].value;
+      if (dealer<12){
+        if (cards.deck[1].value==1||cards.deck[2].value==1||cards.deck[hits+5].value==1){
+          dealer = dealer + 10;
+        }
+      }
       if (dealerHits > 1){
         cards.deck[hits+6].display(300, 120);
         dealer = cards.deck[1].value + cards.deck[2].value + cards.deck[hits+5].value + cards.deck[hits+6].value;
+        if (dealer<12){
+          if (cards.deck[1].value==1||cards.deck[2].value==1||cards.deck[hits+5].value==1||cards.deck[hits+6].value==1){
+            dealer = dealer + 10;
+          }
+        }
         if (dealerHits > 2){
           cards.deck[hits+7].display(370, 120);
           dealer = cards.deck[1].value + cards.deck[2].value + cards.deck[hits+5].value + cards.deck[hits+6].value + cards.deck[hits+7].value;
@@ -127,14 +142,29 @@ void draw(){
   // Third and fourth card are the player's, displayed below
   cards.deck[3].display(90, 280);
   cards.deck[4].display(160, 280);
+  if (hits==0&&total<12){
+    if (cards.deck[3].value==1||cards.deck[4].value==1){
+      total = total + 10;
+    }
+  }
   // As the player hits, the next cards in the deck are displayed and added to their total
   // Cannot hit more than 3 times since there is only limited space to display cards
   if (hits > 0){
     cards.deck[5].display(230, 280);
     total = cards.deck[3].value + cards.deck[4].value + cards.deck[5].value;
+    if (total<12){
+      if (cards.deck[3].value==1||cards.deck[4].value==1||cards.deck[5].value==1){
+        total = total + 10;
+      }
+    }
     if (hits > 1){
       cards.deck[6].display(300, 280);
       total = cards.deck[3].value + cards.deck[4].value + cards.deck[5].value + cards.deck[6].value;
+      if (total<12){
+        if (cards.deck[3].value==1||cards.deck[4].value==1||cards.deck[5].value==1||cards.deck[6].value==1){
+          total = total + 10;
+        }
+      }
       if (hits > 2){
         cards.deck[7].display(370, 280);
         total = cards.deck[3].value + cards.deck[4].value + cards.deck[5].value + cards.deck[6].value + cards.deck[7].value;
